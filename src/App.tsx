@@ -19,7 +19,7 @@ export default function App() {
 
   return (
     <main className="container mx-auto px-4 py-8">
-      <div className="grid md:grid-cols-2 gap-8">
+      <div className="grid md:grid-cols-2 items-center gap-8">
         <ProductImage selectedColor={selectedColor} />
         <ProductInfo
           addToCart={addToCart}
