@@ -4,16 +4,21 @@ interface CartModalProps {
   isOpen: boolean;
   onClose: () => void;
   cartItems: CartItem[];
+  setCart: React.Dispatch<React.SetStateAction<CartItem[]>>;
 }
 
-const CartModal = ({ isOpen, onClose, cartItems }: CartModalProps) => {
+const CartModal = ({ isOpen, onClose, cartItems, setCart }: CartModalProps) => {
   if (!isOpen) return null;
 
   const total = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-  console.log(cartItems);
+
+  const handleCartItems = () => {
+    setCart([]);
+    onClose();
+  };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
@@ -53,7 +58,10 @@ const CartModal = ({ isOpen, onClose, cartItems }: CartModalProps) => {
             <button className="px-4 py-2 bg-gray-200 rounded" onClick={onClose}>
               Continue Shopping
             </button>
-            <button className="px-4 py-2 bg-purple-600 text-white rounded">
+            <button
+              className="px-4 py-2 bg-purple-600 text-white rounded"
+              onClick={() => handleCartItems()}
+            >
               Checkout
             </button>
           </div>

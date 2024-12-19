@@ -23,6 +23,7 @@ export default function ProductInfo({
 }: ProductInfoProps) {
   // Remove the local selectedColor state
   const [selectedSize, setSelectedSize] = useState("M");
+  const [wished, setWished] = useState(false);
   const [quantity, setQuantity] = useState(1);
 
   const prices = {
@@ -101,7 +102,7 @@ export default function ProductInfo({
       <div className="flex items-center space-x-4">
         <div className="flex items-center border rounded-md">
           <button
-            className="px-3 py-2 bg-gray-100"
+            className="px-3 py-2 border-r"
             onClick={() => setQuantity((q) => Math.max(1, q - 1))}
           >
             -
@@ -115,19 +116,21 @@ export default function ProductInfo({
             className="w-16 text-center border-0"
           />
           <button
-            className="px-3 py-2 bg-gray-100"
+            className="px-3 py-2 border-l"
             onClick={() => setQuantity((q) => q + 1)}
           >
             +
           </button>
         </div>
         <button
-          className="flex-1 px-4 py-2 bg-purple-600 text-white rounded-md"
+          className=" px-4 py-2 bg-purple-600 text-white rounded-md"
           onClick={handleAddToCart}
         >
           Add to Cart
         </button>
-        <button className="p-2 border rounded-md">♡</button>
+        <button onClick={() => setWished(!wished)} className="p-2 text-lg">
+          {!wished ? "♡" : "♥"}
+        </button>
       </div>
     </div>
   );

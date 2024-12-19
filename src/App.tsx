@@ -35,6 +35,7 @@ export default function App() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         cartItems={cart}
+        setCart={setCart}
       />
     </main>
   );
