@@ -16,6 +16,7 @@ module.exports = {
         'light-text-color': '#8091A7',
         'border-color': '#DBDFEA',
         'checkout-color': '#FFBB5A',
+        'button-color': '#6576FF',
       },
     },
   },

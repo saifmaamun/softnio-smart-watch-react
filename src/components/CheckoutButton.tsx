@@ -3,10 +3,7 @@ interface CheckoutButtonProps {
   onClick: () => void;
 }
 
-export default function CheckoutButton({
-  cartCount,
-  onClick,
-}: CheckoutButtonProps) {
+const CheckoutButton = ({ cartCount, onClick }: CheckoutButtonProps) => {
   return (
     <div className="container mx-auto mt-32 flex justify-center">
       <button
@@ -20,4 +17,5 @@ export default function CheckoutButton({
       </button>
     </div>
   );
-}
+};
+export default CheckoutButton;

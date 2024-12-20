@@ -59,7 +59,7 @@ const CartModal = ({ isOpen, onClose, cartItems, setCart }: CartModalProps) => {
               Continue Shopping
             </button>
             <button
-              className="px-4 py-2 bg-purple-600 text-white rounded"
+              className="px-4 py-2 bg-button-color text-white rounded"
               onClick={() => handleCartItems()}
             >
               Checkout

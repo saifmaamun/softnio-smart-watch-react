@@ -14,7 +14,7 @@ interface ProductImageProps {
   selectedColor: "purple" | "cyan" | "blue" | "black";
 }
 
-export default function ProductImage({ selectedColor }: ProductImageProps) {
+const ProductImage = ({ selectedColor }: ProductImageProps) => {
   return (
     <div className="relative aspect-square">
       <img
@@ -24,4 +24,5 @@ export default function ProductImage({ selectedColor }: ProductImageProps) {
       />
     </div>
   );
-}
+};
+export default ProductImage;

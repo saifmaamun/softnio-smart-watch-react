@@ -13,10 +13,8 @@ const colorOptions: Array<{
   { name: "Black", value: "black" },
 ];
 
-export default function ColorOptions({
-  selectedColor,
-  onColorChange,
-}: ColorOptionsProps) {
+const ColorOptions = ({ selectedColor, onColorChange }: ColorOptionsProps) => {
+  console.log(selectedColor);
   return (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold text-text-color">Band Color</h3>
@@ -24,9 +22,9 @@ export default function ColorOptions({
         {colorOptions.map((color) => (
           <button
             key={color.value}
-            className={`w-10 h-10 rounded-full p-1 ${
+            className={`w-4 h-4 rounded-full p-1 ring-black ${
               selectedColor === color.value
-                ? "ring-2 ring-offset-2 ring-black"
+                ? `ring-2 ring-offset-2 ring-${selectedColor}-600`
                 : ""
             }`}
             style={{ backgroundColor: color.value }}
@@ -38,4 +36,5 @@ export default function ColorOptions({
       </div>
     </div>
   );
-}
+};
+export default ColorOptions;

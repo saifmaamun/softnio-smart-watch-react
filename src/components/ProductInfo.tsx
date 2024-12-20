@@ -16,11 +16,11 @@ interface ProductInfoProps {
   >;
 }
 
-export default function ProductInfo({
+const ProductInfo = ({
   addToCart,
   selectedColor,
   setSelectedColor,
-}: ProductInfoProps) {
+}: ProductInfoProps) => {
   // Remove the local selectedColor state
   const [selectedSize, setSelectedSize] = useState("M");
   const [wished, setWished] = useState(false);
@@ -123,7 +123,7 @@ export default function ProductInfo({
           </button>
         </div>
         <button
-          className=" px-4 py-2 bg-purple-600 text-white rounded-md"
+          className=" px-4 py-2 bg-button-color text-white rounded-md"
           onClick={handleAddToCart}
         >
           Add to Cart
@@ -134,4 +134,5 @@ export default function ProductInfo({
       </div>
     </div>
   );
-}
+};
+export default ProductInfo;

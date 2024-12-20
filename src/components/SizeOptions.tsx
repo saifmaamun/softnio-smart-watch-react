@@ -10,10 +10,7 @@ const sizeOptions = [
   { label: "XL", price: 99 },
 ];
 
-export default function SizeOptions({
-  selectedSize,
-  onSizeChange,
-}: SizeOptionsProps) {
+const SizeOptions = ({ selectedSize, onSizeChange }: SizeOptionsProps) => {
   return (
     <div className="space-y-4">
       <h3 className="text-lg font-semibold text-text-color">Wrist Size</h3>
@@ -45,4 +42,5 @@ export default function SizeOptions({
       </div>
     </div>
   );
-}
+};
+export default SizeOptions;
