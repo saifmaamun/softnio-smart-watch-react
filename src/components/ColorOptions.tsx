@@ -22,14 +22,33 @@ const ColorOptions = ({ selectedColor, onColorChange }: ColorOptionsProps) => {
         {colorOptions.map((color) => (
           <button
             key={color.value}
-            className={`w-4 h-4 rounded-full p-1 ring-black ${
+            className={`w-4 h-4 rounded-full p-1  ${
               selectedColor === color.value
-                ? `ring-2 ring-offset-2 ring-${selectedColor}-600`
+                ? selectedColor === "purple"
+                  ? `ring-2 ring-offset-2 ring-purple-600 `
+                  : selectedColor === "blue"
+                  ? `ring-2 ring-offset-2 ring-blue-600 `
+                  : selectedColor === "cyan"
+                  ? `ring-2 ring-offset-2 ring-cyan-600 `
+                  : selectedColor === "black"
+                  ? `ring-2 ring-offset-2 ring-black `
+                  : ""
                 : ""
             }`}
             style={{ backgroundColor: color.value }}
             onClick={() => onColorChange(color.value)}
           >
+            {/* <button
+            key={color.value}
+            className={`w-4 h-4 rounded-full p-1 ring-black  ${
+              selectedColor === color.value
+                ? `ring-2 ring-offset-2 ring-${selectedColor}-600 `
+                : ""
+            }`}
+            style={{ backgroundColor: color.value }}
+            onClick={() => onColorChange(color.value)}
+          > */}
+
             <span className="sr-only">{color.name}</span>
           </button>
         ))}
