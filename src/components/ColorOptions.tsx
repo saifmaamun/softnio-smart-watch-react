@@ -38,17 +38,6 @@ const ColorOptions = ({ selectedColor, onColorChange }: ColorOptionsProps) => {
             style={{ backgroundColor: color.value }}
             onClick={() => onColorChange(color.value)}
           >
-            {/* <button
-            key={color.value}
-            className={`w-4 h-4 rounded-full p-1 ring-black  ${
-              selectedColor === color.value
-                ? `ring-2 ring-offset-2 ring-${selectedColor}-600 `
-                : ""
-            }`}
-            style={{ backgroundColor: color.value }}
-            onClick={() => onColorChange(color.value)}
-          > */}
-
             <span className="sr-only">{color.name}</span>
           </button>
         ))}
